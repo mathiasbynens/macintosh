@@ -2,7 +2,7 @@
 
 _macintosh_ is a robust JavaScript implementation of [the macintosh character encoding as defined by the Encoding Standard](http://encoding.spec.whatwg.org/#macintosh).
 
-This encoding is known under the following names: csmacintosh, mac, macintosh, x-mac-roman, and x-mac-roman.
+This encoding is known under the following names: csmacintosh, mac, macintosh, and x-mac-roman.
 
 ## Installation
 
