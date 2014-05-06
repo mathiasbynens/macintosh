@@ -1,6 +1,6 @@
 # macintosh [![Build status](https://travis-ci.org/mathiasbynens/macintosh.svg?branch=master)](https://travis-ci.org/mathiasbynens/macintosh) [![Dependency status](https://gemnasium.com/mathiasbynens/macintosh.svg)](https://gemnasium.com/mathiasbynens/macintosh)
 
-_macintosh_ is robust JavaScript implementation of [the macintosh character encoding as defined by the Encoding Standard](http://encoding.spec.whatwg.org/#macintosh).
+_macintosh_ is a robust JavaScript implementation of [the macintosh character encoding as defined by the Encoding Standard](http://encoding.spec.whatwg.org/#macintosh).
 
 This encoding is known under the following names: csmacintosh, mac, macintosh, x-mac-roman, and x-mac-roman.
 
