@@ -64,6 +64,10 @@ require(
 
 A string representing the semantic version number.
 
+### `macintosh.labels`
+
+An array of strings, each representing a [label](http://encoding.spec.whatwg.org/#label) for this encoding.
+
 ### `macintosh.encode(input, options)`
 
 This function takes a plain text string (the `input` parameter) and encodes it according to macintosh. The return value is a ‘byte string’, i.e. a string of which each item represents an octet as per macintosh.
