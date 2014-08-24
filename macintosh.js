@@ -1,4 +1,4 @@
-/*! http://mths.be/macintosh v0.1.2 by @mathias | MIT license */
+/*! https://mths.be/macintosh v0.1.2 by @mathias | MIT license */
 ;(function(root) {
 
 	// Detect free variables `exports`.
