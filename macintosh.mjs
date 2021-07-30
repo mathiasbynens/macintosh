@@ -1,4 +1,4 @@
-/*! https://mths.be/macintosh v2.0.0 by @mathias | MIT license */
+/*! https://mths.be/macintosh v3.0.0 by @mathias | MIT license */
 
 const stringFromCharCode = String.fromCharCode;
 
