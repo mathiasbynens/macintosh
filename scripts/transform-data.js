@@ -56,17 +56,17 @@ fs.writeFileSync(
 );
 
 // tests/tests.src.js → tests/tests.js
-const TEST_TEMPLATE = fs.readFileSync('./tests/tests.src.js', 'utf8');
+const TEST_TEMPLATE = fs.readFileSync('./tests/tests.src.mjs', 'utf8');
 const createTest = template(TEST_TEMPLATE, {
 	interpolate: /<\%=([\s\S]+?)%\>/g,
 });
 const testCode = createTest(require('./export-data.js'));
-fs.writeFileSync('./tests/tests.js', testCode);
+fs.writeFileSync('./tests/tests.mjs', testCode);
 
-// src/macintosh.src.js -> macintosh.js
-const LIB_TEMPLATE = fs.readFileSync('./src/macintosh.src.js', 'utf8');
+// src/macintosh.src.mjs -> macintosh.mjs
+const LIB_TEMPLATE = fs.readFileSync('./src/macintosh.src.mjs', 'utf8');
 const createLib = template(LIB_TEMPLATE, {
 	interpolate: /<\%=([\s\S]+?)%\>/g,
 });
 const libCode = createLib(require('./export-data.js'));
-fs.writeFileSync('./macintosh.js', libCode);
+fs.writeFileSync('./macintosh.mjs', libCode);

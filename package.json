@@ -3,7 +3,7 @@
 	"version": "1.1.0",
 	"description": "A robust macintosh encoder/decoder written in JavaScript.",
 	"homepage": "https://mths.be/macintosh",
-	"main": "macintosh.js",
+	"exports": "macintosh.mjs",
 	"keywords": [
 		"codec",
 		"decoder",
@@ -29,13 +29,13 @@
 	"bugs": "https://github.com/mathiasbynens/macintosh/issues",
 	"files": [
 		"LICENSE-MIT.txt",
-		"macintosh.js"
+		"macintosh.mjs"
 	],
 	"scripts": {
 		"download": "curl https://encoding.spec.whatwg.org/index-macintosh.txt > data/index.txt",
 		"build": "node scripts/transform-data.js",
-		"test": "node tests/tests.js",
-		"cover": "istanbul cover --report html --verbose --dir coverage tests/tests.js"
+		"test": "node tests/tests.mjs",
+		"cover": "istanbul cover --report html --verbose --dir coverage tests/tests.mjs"
 	},
 	"devDependencies": {
 		"istanbul": "^0.4.2",

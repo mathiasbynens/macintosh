@@ -12,23 +12,15 @@ Via [npm](https://www.npmjs.com/):
 npm install macintosh
 ```
 
-In a browser:
-
-```html
-<script src="macintosh.js"></script>
-```
-
-In [Node.js](https://nodejs.org/):
+In a browser or in [Node.js](https://nodejs.org/):
 
 ```js
-const macintosh = require('macintosh');
+import {encode, decode, labels} from 'macintosh';
+// or…
+import * as macintosh from 'macintosh';
 ```
 
 ## API
-
-### `macintosh.version`
-
-A string representing the semantic version number.
 
 ### `macintosh.labels`
 

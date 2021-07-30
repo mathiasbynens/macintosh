@@ -1,6 +1,6 @@
-const assert = require('assert');
+import assert from 'node:assert';
 
-const macintosh = require('../macintosh.js');
+import * as macintosh from '../macintosh.mjs';
 
 console.log('Testing `macintosh.encode`…');
 assert.strictEqual(
@@ -109,3 +109,7 @@ assert.throws(
 	Error,
 	'Mode names are case-insensitive'
 );
+
+console.log('Testing `macintosh.labels`…');
+assert.ok(Array.isArray(macintosh.labels));
+assert.ok(macintosh.labels.length > 0);
