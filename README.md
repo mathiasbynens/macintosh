@@ -28,25 +28,25 @@ An array of strings, each representing a [label](https://encoding.spec.whatwg.or
 
 ### `macintosh.encode(input, options)`
 
-This function takes a plain text string (the `input` parameter) and encodes it according to macintosh. The return value is a ‘byte string’, i.e. a string of which each item represents an octet as per macintosh.
+This function takes a plain text string (the `input` parameter) and encodes it according to macintosh. The return value is an environment-agnostic `Uint16Array` of which each element represents an octet as per macintosh.
 
 ```js
 const encodedData = macintosh.encode(text);
 ```
 
-The optional `options` object and its `mode` property can be used to set the [error mode](https://encoding.spec.whatwg.org/#error-mode). For encoding, the error mode can be `'fatal'` (the default) or `'html'`.
+The optional `options` object and its `mode` property can be used to set the error mode. The two available error modes are `'fatal'` (the default) or `'replacement'`. (Note: This differs from [the spec](https://encoding.spec.whatwg.org/#error-mode), which recognizes `'fatal`' and `html` modes for encoders. The reason behind this difference is that the spec algorithm is aimed at producing HTML, whereas this library encodes into an environment-agnostic `Uint16Array` of bytes.)
 
 ```js
 const encodedData = macintosh.encode(text, {
-  mode: 'html'
+  mode: 'replacement'
 });
 // If `text` contains a symbol that cannot be represented in macintosh,
-// instead of throwing an error, it will return an HTML entity for the symbol.
+// instead of throwing an error, it becomes 0xFFFD.
 ```
 
 ### `macintosh.decode(input, options)`
 
-This function takes a byte string (the `input` parameter) and decodes it according to macintosh.
+This function decodes `input` according to macintosh. The `input` parameter can either be a `Uint16Array` of which each element represents an octet as per macintosh, or a ‘byte string’ (i.e. a string of which each item represents an octet as per macintosh).
 
 ```js
 const text = macintosh.decode(encodedData);
@@ -61,8 +61,6 @@ const text = macintosh.decode(encodedData, {
 // If `encodedData` contains an invalid byte for the macintosh encoding,
 // instead of replacing it with U+FFFD in the output, an error is thrown.
 ```
-
-For decoding a buffer (e.g. from `fs.readFile`) use `buffer.toString('binary')` to get the byte string which `decode` takes.
 
 ## Notes
 
