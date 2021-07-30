@@ -1,4 +1,4 @@
-# macintosh [![macintosh on npm](https://img.shields.io/npm/v/macintosh)](https://www.npmjs.com/package/macintosh)
+# macintosh [![Build status](https://github.com/mathiasbynens/macintosh/workflows/run-checks/badge.svg)](https://github.com/mathiasbynens/macintosh/actions?query=workflow%3Arun-checks) [![macintosh on npm](https://img.shields.io/npm/v/macintosh)](https://www.npmjs.com/package/macintosh)
 
 _macintosh_ is a robust JavaScript implementation of [the macintosh character encoding as defined by the Encoding Standard](https://encoding.spec.whatwg.org/#macintosh).
 
