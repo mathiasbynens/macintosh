@@ -1,4 +1,4 @@
-# macintosh [![Build status](https://travis-ci.org/mathiasbynens/macintosh.svg?branch=master)](https://travis-ci.org/mathiasbynens/macintosh) [![Code coverage status](https://coveralls.io/repos/mathiasbynens/macintosh/badge.svg)](https://coveralls.io/r/mathiasbynens/macintosh) [![Dependency status](https://gemnasium.com/mathiasbynens/macintosh.svg)](https://gemnasium.com/mathiasbynens/macintosh)
+# macintosh [![macintosh on npm](https://img.shields.io/npm/v/macintosh)](https://www.npmjs.com/package/macintosh)
 
 _macintosh_ is a robust JavaScript implementation of [the macintosh character encoding as defined by the Encoding Standard](https://encoding.spec.whatwg.org/#macintosh).
 
@@ -18,32 +18,10 @@ In a browser:
 <script src="macintosh.js"></script>
 ```
 
-In [Node.js](https://nodejs.org/), [io.js](https://iojs.org/), [Narwhal](http://narwhaljs.org/), and [RingoJS](http://ringojs.org/):
+In [Node.js](https://nodejs.org/):
 
 ```js
-var macintosh = require('macintosh');
-```
-
-In [Rhino](https://www.mozilla.org/rhino/):
-
-```js
-load('macintosh.js');
-```
-
-Using an AMD loader like [RequireJS](http://requirejs.org/):
-
-```js
-require(
-  {
-    'paths': {
-      'macintosh': 'path/to/macintosh'
-    }
-  },
-  ['macintosh'],
-  function(macintosh) {
-    console.log(macintosh);
-  }
-);
+const macintosh = require('macintosh');
 ```
 
 ## API
@@ -68,7 +46,7 @@ The optional `options` object and its `mode` property can be used to set the [er
 
 ```js
 const encodedData = macintosh.encode(text, {
-  'mode': 'html'
+  mode: 'html'
 });
 // If `text` contains a symbol that cannot be represented in macintosh,
 // instead of throwing an error, it will return an HTML entity for the symbol.
@@ -86,17 +64,13 @@ The optional `options` object and its `mode` property can be used to set the [er
 
 ```js
 const text = macintosh.decode(encodedData, {
-  'mode': 'fatal'
+  mode: 'fatal'
 });
 // If `encodedData` contains an invalid byte for the macintosh encoding,
 // instead of replacing it with U+FFFD in the output, an error is thrown.
 ```
 
 For decoding a buffer (e.g. from `fs.readFile`) use `buffer.toString('binary')` to get the byte string which `decode` takes.
-
-## Support
-
-_macintosh_ is designed to work in at least Node.js v0.10.0, io.js v1.0.0, Narwhal 0.3.2, RingoJS 0.8-0.11, PhantomJS 1.9.0, Rhino 1.7RC4, as well as old and modern versions of Chrome, Firefox, Safari, Opera, Edge, and Internet Explorer.
 
 ## Notes
 
