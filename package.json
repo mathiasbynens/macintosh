@@ -29,8 +29,10 @@
 	"bugs": "https://github.com/mathiasbynens/macintosh/issues",
 	"files": [
 		"LICENSE-MIT.txt",
-		"macintosh.mjs"
+		"macintosh.mjs",
+		"macintosh.d.ts"
 	],
+	"types": "macintosh.d.ts",
 	"scripts": {
 		"download": "curl https://encoding.spec.whatwg.org/index-macintosh.txt > data/index.txt",
 		"build": "node scripts/transform-data.js",
