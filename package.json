@@ -1,6 +1,6 @@
 {
 	"name": "macintosh",
-	"version": "3.0.3",
+	"version": "3.0.4",
 	"description": "A robust macintosh encoder/decoder written in JavaScript.",
 	"homepage": "https://mths.be/macintosh",
 	"exports": "./macintosh.mjs",
